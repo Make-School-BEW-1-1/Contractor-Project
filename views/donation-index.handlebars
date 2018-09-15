@@ -1,1 +1,8 @@
 <h1>Donations</h1>
+<a href="/donation/new" class="btn btn-primary">Add Donation</a>
+<hr>
+{{#each reviews}}
+    <h2>{{this.charity}}</h2>
+    <h3>{{this.amount}}</h3>
+    <h4>{{this.date}}</h4>
+{{/each}}

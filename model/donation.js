@@ -3,6 +3,6 @@ const Schema = mongoose.Schema;
 
 module.exports = mongoose.model('Donation', {
     charity: String,
-    amount: Schema.Types.Decimal128,
+    amount: String,
     date: Date
 });

@@ -14,11 +14,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const donation = require('./controller/donation.js');
+const charity = require('./controller/charity.js')
 
 const port = process.env.PORT || 3000;
 
 donation(app);
-
+charity(app);
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}!`);

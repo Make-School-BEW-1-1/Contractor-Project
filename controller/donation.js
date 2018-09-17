@@ -3,7 +3,6 @@ const Donation = require('../model/donation.js');
 module.exports = function(app) {
     app.get('/', (req, res) => {
         Donation.find().then(donations => {
-            console.log("Indexed donations: " + donations);
             res.render('donation-index', { donations: donations });
         }).catch(err => {
             console.log(err);

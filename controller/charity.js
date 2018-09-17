@@ -3,8 +3,9 @@ const appID = '89b66fef';
 const apiKey = process.env.API_KEY;
 
 module.exports = function(app) {
-    app.get('/charity', (req, res) => {
-        let term = encodeURIComponent('wildlife');
+    app.get('/charities', (req, res) => {
+        console.log(req.query);
+        let term = encodeURIComponent(req.query.term);
         let url = 'https://api.data.charitynavigator.org/v2/Organizations?app_id=' + appID + '&app_key=' + apiKey + "&search=" + term + "&rated=true";
         console.log(url);
 

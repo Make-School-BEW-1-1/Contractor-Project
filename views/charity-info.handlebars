@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Charities</h1>
+    {{#each charities}}
+        {{#if this.currentRating}}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.charityName}}</h2>
+                    {{#if this.tagLine}}
+                        <h6 class="card-subtitle mb-2 text-muted">{{this.tagLine}}</h3>
+                    {{/if}}
+                    <p class="card-text">Score: {{this.currentRating.rating}}</p>
+                </div>
+            </div>
+        {{/if}}
+    {{/each}}</div>

@@ -5,7 +5,7 @@ const apiKey = process.env.API_KEY;
 module.exports = function(app) {
     app.get('/charity', (req, res) => {
         let term = encodeURIComponent('wildlife');
-        let url = 'https://api.data.charitynavigator.org/v2/Organizations?app_id=' + appID + '&app_key=' + apiKey + "&search=" + term;
+        let url = 'https://api.data.charitynavigator.org/v2/Organizations?app_id=' + appID + '&app_key=' + apiKey + "&search=" + term + "&rated=true";
         console.log(url);
 
         http.get(url, (response) => {
@@ -18,6 +18,7 @@ module.exports = function(app) {
 
             response.on('end', () => {
                 var parsed = JSON.parse(body);
+                res.render('charity-info', { charities: parsed })
             });
         });
     });

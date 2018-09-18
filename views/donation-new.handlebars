@@ -2,24 +2,8 @@
     <div class="row justify-content-center">
         <div class="col-sm-4">
             <form action="/donation" method="POST">
-                <fieldset>
-                    <legend>Add a New Donation</legend>
-                    <div class="form-group">
-                        <label for="charity">Charity</label>
-                        <input id="charity" class="form-control" type="text" name="charity" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="amount">Amount</label>
-                        <input id="amount" class="form-control" type="number" name="amount" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Date</label>
-                        <input id="date" class="form-control" type="date" name="date" value="">
-                    </div>
-                </fieldset>
-                <div class="form-group">
-                    <button class="btn btn-primary" type="submit">Save Donation</button>
-                </div>
+                <legend>Add a New Donation</legend>
+                {{> donation-form}}
             </form>
         </div>
     </div>

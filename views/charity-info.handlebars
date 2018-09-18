@@ -2,13 +2,22 @@
     <h1>Charities</h1>
     {{#each charities}}
         {{#if this.currentRating}}
-            <div class="card">
+            <div class="card w-50" style="margin-bottom:8px;">
                 <div class="card-body">
                     <h5 class="card-title">{{this.charityName}}</h2>
                     {{#if this.tagLine}}
                         <h6 class="card-subtitle mb-2 text-muted">{{this.tagLine}}</h3>
                     {{/if}}
                     <p class="card-text">Score: {{this.currentRating.rating}}</p>
+                    <a href="{{this.websiteURL}}" target="_blank" class="card-link">Website<a>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{this.charityName}}Collapse" aria-expanded="false" aria-controls="{{this.charityName}}Collapse" style="margin:auto;width:8em;">Donate</button>
+                    </div>
+                    <div class="collapse multi-collapse" id="{{this.charityName}}Collapse">
+                        <form action="/donation" method="POST">
+                            {{> donation-form}}
+                        </form>
+                    </div>
                 </div>
             </div>
         {{/if}}

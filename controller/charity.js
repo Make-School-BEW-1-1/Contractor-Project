@@ -4,10 +4,10 @@ const apiKey = process.env.API_KEY;
 
 module.exports = function(app) {
     app.get('/charities', (req, res) => {
-        console.log(req.query);
+        console.log("Searching for: " + req.query.term);
         let term = encodeURIComponent(req.query.term);
         let url = 'https://api.data.charitynavigator.org/v2/Organizations?app_id=' + appID + '&app_key=' + apiKey + "&search=" + term + "&rated=true";
-        console.log(url);
+        // console.log(url);
 
         http.get(url, (response) => {
             response.setEncoding('utf8');

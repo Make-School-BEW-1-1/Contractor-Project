@@ -8,7 +8,8 @@ module.exports = mongoose.model('Donation', {
             rating: Number
         },
         tagline: String,
-        websiteURL: String
+        websiteURL: String,
+        userID: String
     },
     amount: Schema.Types.Decimal128,
     date: String

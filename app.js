@@ -15,13 +15,11 @@ app.use(bodyParser.json());
 
 const donation = require('./controller/donation.js');
 const charity = require('./controller/charity.js')
-const user = require('./controller/user.js')
 
 const port = process.env.PORT || 3000;
 
 donation(app);
 charity(app);
-user(app);
 
 app.listen(port, () => {
 

@@ -1,5 +1,5 @@
 const http = require('https');
-const appID = '89b66fef';
+const appID = process.env.API_ID;
 const apiKey = process.env.API_KEY;
 
 module.exports = function(app) {
